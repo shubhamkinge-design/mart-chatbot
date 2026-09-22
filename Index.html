@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MART ChatBOT</title>
+
+    <script src="https://cdn.prod.us.five9.net/static/stable/chat/wrapper/index.js"></script>
+</head>
+<body>
+
+    <h2>MART DVA ChatBOT</h2>
+
+    <script>
+        window.addEventListener("load", function () {
+
+            if(window.F9){
+
+                F9.Chat.Wrapper.init({
+                    cdn: 'prod',
+                    integrationId: 'af82f736-fcbe-4945-9bfc-d2f1e2bdf078',
+                    chatDeploymentId: '8fa560fd-0d97-4b7c-845b-665d979d8bee'
+                });
+
+            } else {
+
+                console.error("Five9 library not loaded");
+
+            }
+
+        });
+    </script>
+
+</body>
+</html>
