@@ -1,34 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MART ChatBOT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <script src="https://cdn.prod.us.five9.net/static/stable/chat/wrapper/index.js"></script>
+<title>MART DVA ChatBot</title>
+
+<script src="https://cdn.prod.us.five9.net/static/stable/chat/wrapper/index.js"></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#2454e6,#173bb0);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    height:90vh;
+
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:24px;
+
+    display:flex;
+    overflow:hidden;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.left-panel{
+    width:40%;
+    padding:60px;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:18px;
+    opacity:.9;
+    margin-bottom:30px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.2);
+    margin-bottom:30px;
+}
+
+.features{
+    margin-top:20px;
+}
+
+.features li{
+    list-style:none;
+    padding:10px 0;
+    font-size:16px;
+}
+
+.right-panel{
+    flex:1;
+    background:white;
+    position:relative;
+}
+
+.chat-area{
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.start-btn{
+    padding:18px 40px;
+    border:none;
+    border-radius:12px;
+    background:#2454e6;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.start-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(36,84,230,.35);
+}
+
+.footer{
+    position:absolute;
+    bottom:15px;
+    left:20px;
+    color:#666;
+    font-size:12px;
+}
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+    height:100vh;
+    width:100%;
+    border-radius:0;
+}
+
+.left-panel{
+    width:100%;
+    padding:30px;
+}
+
+.right-panel{
+    min-height:50vh;
+}
+
+}
+</style>
+
 </head>
+
 <body>
 
-    <h2>MART DVA ChatBOT</h2>
+<div class="container">
 
-    <script>
-        window.addEventListener("load", function () {
+    <div class="left-panel">
 
-            if(window.F9){
+        <div class="badge">
+            MART Virtual Assistant
+        </div>
 
-                F9.Chat.Wrapper.init({
-                    cdn: 'prod',
-                    integrationId: 'af82f736-fcbe-4945-9bfc-d2f1e2bdf078',
-                    chatDeploymentId: 'ccb48d56-b779-4ee3-81eb-4ab873a908d7'
-                });
+        <div class="logo">
+            MART DVA
+        </div>
 
-            } else {
+        <div class="subtitle">
+            AI-powered support assistant for MART operations,
+            reporting, FAQs and platform guidance.
+        </div>
 
-                console.error("Five9 library not loaded");
+        <ul class="features">
+            <li>✅ Instant Answers</li>
+            <li>✅ MART Knowledge Base</li>
+            <li>✅ Reporting Assistance</li>
+            <li>✅ 24/7 Support</li>
+        </ul>
 
-            }
+    </div>
 
-        });
-    </script>
+    <div class="right-panel">
+
+        <div class="chat-area">
+            <button class="start-btn" onclick="launchChat()">
+                Start Chat
+            </button>
+        </div>
+
+        <div class="footer">
+            MART DVA ChatBot • Powered by Five9
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function launchChat(){
+
+    F9.Chat.Wrapper.init({
+        cdn:'prod',
+        integrationId:'af82f736-fcbe-4945-9bfc-d2f1e2bdf078',
+        chatDeploymentId:'ccb48d56-b779-4ee3-81eb-4ab873a908d7'
+    });
+
+}
+
+</script>
 
 </body>
 </html>
